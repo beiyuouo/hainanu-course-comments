@@ -33,12 +33,28 @@ jobs:
       - name: Update dir
         run: python update-robailab.py
 
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          CUSTOM_DOMAIN: robai-lab.github.io
-          CONFIG_FILE: mkdocs-robailab.yml
-          GITHUB_REPOSITORY: robai-lab/hainanu-course-comments
-          # EXTRA_PACKAGES: build-base
-          # REQUIREMENTS: requirements.txt
+      - name: Build
+        uses: Tiryoh/actions-mkdocs@v0
+        with:
+          mkdocs_version: "latest" # option
+          # mkdocs_version: '1.1' # option
+          # requirements: "requirements.txt" # option
+          configfile: "mkdocs-robailab.yml" # option
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: robai-lab/hainanu-course-comments
+          publish_branch: gh-pages
+          publish_dir: ./site
+
+      #- name: Deploy docs
+      #  uses: mhausenblas/mkdocs-deploy-gh-pages@master
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      #    CUSTOM_DOMAIN: robai-lab.github.io
+      #    CONFIG_FILE: mkdocs-robailab.yml
+      #    GITHUB_REPOSITORY: robai-lab/hainanu-course-comments
+      #    EXTRA_PACKAGES: build-base
+      #    REQUIREMENTS: requirements.txt
