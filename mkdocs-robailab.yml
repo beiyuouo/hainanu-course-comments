@@ -1,0 +1,23 @@
+site_name: 海南大学课程攻略
+
+theme:
+  name: material
+  custom_dir: overrides
+
+repo_url: https://github.com/robai-lab/hainanu-course-comments
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ja
+
+extra:
+  analytics:
+    provider: google
+    property: G-2HSQHX22VT

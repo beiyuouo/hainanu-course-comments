@@ -8,8 +8,8 @@ EXCLUDE_DIRS = ['.git', 'docs', '.vscode', 'overrides', '.github', 'script']
 README_MD = ['README.md', 'readme.md', 'index.md']
 
 TXT_EXTS = ['md', 'txt']
-TXT_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
-BIN_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/raw/main/'
+TXT_URL_PREFIX = 'https://github.com/robai-lab/hainanu-course-comments/blob/main/'
+BIN_URL_PREFIX = 'https://github.com/robai-lab/hainanu-course-comments/raw/main/'
 CDN_PREFIX = 'https://curly-shape-d178.qinse.workers.dev/'
 
 
@@ -31,7 +31,7 @@ def list_files(course: str):
                     filelist_texts_org += '{}- [{}]({})\n'.format(subindent,
                                                                   f, TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
                     filelist_texts_cdn += '{}- [{}]({})\n'.format(subindent,
-                                                                  f, TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
+                                                                  f, CDN_PREFIX + TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
                 else:
                     filelist_texts_org += '{}- [{}]({})\n'.format(subindent,
                                                                   f, BIN_URL_PREFIX + quote('{}/{}'.format(root, f)))
