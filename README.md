@@ -8,6 +8,8 @@
 
 > *只要是前人走过的弯路，后人就不必再走。*
 
+**点击[这里](https://curly-shape-d178.qinse.workers.dev/https://github.com/beiyuouo/hainanu-course-comments/archive/refs/tags/lastest.zip)可以直接利用CDN下载所有文件**
+
 既然来了，就去给[仓库](https://github.com/beiyuouo/hainanu-course-comments)点一个小星星吧！顺便分享给自己的朋友，万一复习期间用得到呢！
 
 > 截止至*2021-10-28 00:00:00*，在网站上线的第一天中，网站获得了**474**的浏览量，获得了**255**个新用户，收获了**8**个star和**4**个fork！！
