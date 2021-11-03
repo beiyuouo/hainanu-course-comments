@@ -4,7 +4,7 @@ theme:
   name: material
   custom_dir: overrides
 
-repo_url: https://github.com/robai-lab/hainanu-course-comments
+repo_url: https://github.com/beiyuouo/hainanu-course-comments
 
 markdown_extensions:
   - def_list
@@ -20,4 +20,4 @@ plugins:
 extra:
   analytics:
     provider: google
-    property: G-2HSQHX22VT
+    property: UA-145083103-2
