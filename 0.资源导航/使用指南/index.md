@@ -27,6 +27,8 @@
 5. 接下来你需要将更新推送到本仓库，回到本项目[pull](https://github.com/beiyuouo/hainanu-course-comments/pulls)，点击右方`New pull request`，选择将`beiyuouo/hainanu-course-comments <- <你的用户名>/<你的仓库名>`并入本仓库，最后提交即可。
 6. 最后会通过GitHub Action生成部署网站。
 
+> 通过此方式贡献，你的名字也会显示在本仓库的[Contributors](https://github.com/beiyuouo/hainanu-course-comments/graphs/contributors)中，你可以在自己主页的pinned中添加本项目！！
+
 
 ### 通过Issue或Discussion
 
