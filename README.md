@@ -8,7 +8,7 @@
 
 > *只要是前人走过的弯路，后人就不必再走。*
 
-**点击[这里](https://curly-shape-d178.qinse.workers.dev/https://github.com/beiyuouo/hainanu-course-comments/archive/refs/tags/lastest.zip)可以直接利用CDN下载所有文件**
+**点击[这里](https://curly-shape-d178.qinse.workers.dev/https://github.com/beiyuouo/hainanu-course-comments/releases/download/latest/release.zip)可以直接利用CDN下载所有文件**
 
 既然来了，就去给[仓库](https://github.com/beiyuouo/hainanu-course-comments)点一个小星星吧！顺便分享给自己的朋友，万一复习期间用得到呢！
 
