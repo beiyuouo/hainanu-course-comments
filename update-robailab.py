@@ -11,7 +11,7 @@ TXT_EXTS = ['md', 'txt']
 TXT_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
 BIN_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/raw/main/'
 CDN_PREFIX = 'https://curly-shape-d178.qinse.workers.dev/'
-CDN_RAW_PREFIX = 'https://raw.githubusercontent.com/beiyuouo/hainanu-course-comments/main/'
+CDN_RAW_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
 
 
 def list_files(course: str):
