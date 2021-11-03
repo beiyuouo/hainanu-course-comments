@@ -40,7 +40,7 @@ def list_files(course: str):
                                                                   f, CDN_PREFIX + CDN_RAW_PREFIX + quote('{}/{}'.format(root, f)))
             elif root == course and readme_path == '':
                 readme_path = '{}/{}'.format(root, f)
-    return filelist_texts + filelist_texts_cdn + filelist_texts_org, readme_path
+    return filelist_texts + filelist_texts_org, readme_path
 
 
 def generate_md(course: str, filelist_texts: str, readme_path: str, topic: str):
