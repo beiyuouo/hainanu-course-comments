@@ -8,9 +8,10 @@ EXCLUDE_DIRS = ['.git', 'docs', '.vscode', 'overrides', '.github', 'script']
 README_MD = ['README.md', 'readme.md', 'index.md']
 
 TXT_EXTS = ['md', 'txt']
-TXT_URL_PREFIX = 'https://github.com/robai-lab/hainanu-course-comments/blob/main/'
-BIN_URL_PREFIX = 'https://github.com/robai-lab/hainanu-course-comments/raw/main/'
+TXT_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
+BIN_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/raw/main/'
 CDN_PREFIX = 'https://curly-shape-d178.qinse.workers.dev/'
+CDN_RAW_PREFIX = 'https://raw.githubusercontent.com/beiyuouo/hainanu-course-comments/main/'
 
 
 def list_files(course: str):
@@ -31,12 +32,12 @@ def list_files(course: str):
                     filelist_texts_org += '{}- [{}]({})\n'.format(subindent,
                                                                   f, TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
                     filelist_texts_cdn += '{}- [{}]({})\n'.format(subindent,
-                                                                  f, CDN_PREFIX + TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
+                                                                  f, TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
                 else:
                     filelist_texts_org += '{}- [{}]({})\n'.format(subindent,
                                                                   f, BIN_URL_PREFIX + quote('{}/{}'.format(root, f)))
                     filelist_texts_cdn += '{}- [{}]({})\n'.format(subindent,
-                                                                  f, CDN_PREFIX + BIN_URL_PREFIX + quote('{}/{}'.format(root, f)))
+                                                                  f, CDN_PREFIX + CDN_RAW_PREFIX + quote('{}/{}'.format(root, f)))
             elif root == course and readme_path == '':
                 readme_path = '{}/{}'.format(root, f)
     return filelist_texts + filelist_texts_cdn + filelist_texts_org, readme_path
