@@ -4,7 +4,8 @@
 import os
 from urllib.parse import quote
 
-EXCLUDE_DIRS = ['.git', 'docs', '.vscode', 'overrides', '.github', 'script']
+EXCLUDE_DIRS = ['.git', 'docs', '.vscode',
+                'overrides', '.github', 'script', 'images']
 README_MD = ['README.md', 'readme.md', 'index.md']
 
 TXT_EXTS = ['md', 'txt']

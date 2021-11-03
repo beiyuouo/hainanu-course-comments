@@ -18,6 +18,8 @@
 
 > 希望这个项目能够持续运行下去，估计在选课期间和期末会收到很多流量，但是平日的维护才是网站持续发展的根基，如果你有什么好的想法，也欢迎和我交流。
 
+同时，[RobAI-Lab](https://github.com/RobAI-Lab)搭建了本站的镜像站可以查看[这里](https://robai-lab.github.io/hainanu-course-comments/)
+
 ## 特性
 
 - 根目录下的`template.md`提供的模板方便使用
@@ -67,6 +69,6 @@ Issue、PR、纠错、资料、攻略、评论，各种欢迎！
 其他部分的版权归属于其各自的作者。
 
 ## 致谢
-
+- [RobAI-Lab](https://github.com/RobAI-Lab)
 - [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles)
 - [名校公开课程评价网](https://github.com/conanhujinming/comments-for-awesome-courses)

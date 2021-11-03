@@ -31,7 +31,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Update dir
-        run: python update-robailab.py
+        run: python update.py
 
       - name: Build
         uses: Tiryoh/actions-mkdocs@v0
