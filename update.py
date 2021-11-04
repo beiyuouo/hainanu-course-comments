@@ -3,45 +3,54 @@
 
 import os
 from urllib.parse import quote
+import zipfile
 
 EXCLUDE_DIRS = ['.git', 'docs', '.vscode',
-                'overrides', '.github', 'script', 'images']
+                'overrides', '.github', 'script', 'images', 'zips', 'site']
 README_MD = ['README.md', 'readme.md', 'index.md']
 
 TXT_EXTS = ['md', 'txt']
 TXT_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
 BIN_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/raw/main/'
 CDN_PREFIX = 'https://curly-shape-d178.qinse.workers.dev/'
-CDN_RAW_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
+CDN_RAW_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/zips/'
+
+
+def make_zip(dir_path, zip_path):
+    zip = zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED)
+    for path, dirnames, filenames in os.walk(dir_path):
+        fpath = path.replace(dir_path, "")
+        for filename in filenames:
+            zip.write(os.path.join(path, filename),
+                      os.path.join(fpath, filename))
+    zip.close()
 
 
 def list_files(course: str):
     filelist_texts = '## 文件列表\n\n'
-    filelist_texts_cdn = '### CDN加速链接\n'
-    filelist_texts_org = '### GitHub原始链接\n'
+    filelist_texts_cdn = '### 所有文件打包CDN加速链接\n\n'
+    # print(course)
+    filelist_texts_cdn += f"[{os.path.basename(course)}.zip]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
+
+    filelist_texts_org = '### GitHub原始链接\n\n'
     readme_path = ''
     for root, dirs, files in os.walk(course):
         files.sort()
         level = root.replace(course, '').count(os.sep)
         indent = ' ' * 4 * level
         filelist_texts_org += '{}- {}\n'.format(indent, os.path.basename(root))
-        filelist_texts_cdn += '{}- {}\n'.format(indent, os.path.basename(root))
         subindent = ' ' * 4 * (level + 1)
         for f in files:
             if f not in README_MD:
                 if f.split('.')[-1] in TXT_EXTS:
                     filelist_texts_org += '{}- [{}]({})\n'.format(subindent,
                                                                   f, TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
-                    filelist_texts_cdn += '{}- [{}]({})\n'.format(subindent,
-                                                                  f, TXT_URL_PREFIX + quote('{}/{}'.format(root, f)))
                 else:
                     filelist_texts_org += '{}- [{}]({})\n'.format(subindent,
                                                                   f, BIN_URL_PREFIX + quote('{}/{}'.format(root, f)))
-                    filelist_texts_cdn += '{}- [{}]({})\n'.format(subindent,
-                                                                  f, CDN_PREFIX + CDN_RAW_PREFIX + quote('{}/{}'.format(root, f)))
             elif root == course and readme_path == '':
                 readme_path = '{}/{}'.format(root, f)
-    return filelist_texts + filelist_texts_org, readme_path
+    return filelist_texts + filelist_texts_cdn + filelist_texts_org, readme_path
 
 
 def generate_md(course: str, filelist_texts: str, readme_path: str, topic: str):
@@ -60,11 +69,19 @@ if __name__ == '__main__':
     if not os.path.isdir('docs'):
         os.mkdir('docs')
 
+    if not os.path.isdir('zips'):
+        os.mkdir('zips')
+
+    global PROJECT_PATH
+    PROJECT_PATH = os.path.abspath(__file__)
+
     topics = list(filter(lambda x: os.path.isdir(x) and (
         x not in EXCLUDE_DIRS), os.listdir('.')))  # list topics
 
     for topic in topics:
         topic_path = os.path.join('.', topic)
+        if not os.path.isdir(os.path.join('zips', topic)):
+            os.mkdir(os.path.join('zips', topic))
 
         courses = list(filter(lambda x: os.path.isdir(os.path.join(topic_path, x)) and (
             x not in EXCLUDE_DIRS), os.listdir(topic_path)))  # list courses
@@ -73,6 +90,8 @@ if __name__ == '__main__':
             course_path = os.path.join(".", topic, course)
             filelist_texts, readme_path = list_files(course_path)
             generate_md(course, filelist_texts, readme_path, topic)
+            make_zip(course_path, os.path.join(
+                'zips', topic, '{}.zip'.format(course)))
 
     with open('README.md', 'rb') as file:
         mainreadme_lines = file.readlines()
