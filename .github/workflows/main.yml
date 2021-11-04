@@ -45,9 +45,7 @@ jobs:
           git add -A
           git checkout -b zips
           git commit -m "Zip files"
-          git remote add origin https://github.com/beiyuouo/hainanu-course-comments.git
-          git branch
-          git branch -a
+          git remote add origin https://${GITHUB_ACTOR}:${secret.GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push -f origin zips
 
       - name: Change dir
