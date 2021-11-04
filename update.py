@@ -30,7 +30,7 @@ def list_files(course: str):
     filelist_texts = '## 文件列表\n\n'
     filelist_texts_cdn = '### 一键下载（CDN加速）\n\n'
     # print(course)
-    filelist_texts_cdn += f"    [{os.path.basename(course)}.zip]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
+    filelist_texts_cdn += f"- [{os.path.basename(course)}.zip]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
 
     filelist_texts_org = '### GitHub原始链接\n\n'
     readme_path = ''
