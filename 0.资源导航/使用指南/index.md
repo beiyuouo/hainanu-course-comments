@@ -2,7 +2,7 @@
 
 ## 如何获取
 
-对于想获得单个文件的同学来说，可以直接在网站中点击对应资源进行下载
+对于想获得单个文件的同学来说，可以直接在网站中点击对应资源进行下载，在每个网页下方第一个下载链接为CDN加速后的打包
 
 想要获取全部资源的同学，可以在[项目GitHub主页](https://github.com/beiyuouo/hainanu-course-comments)点击Code->Download ZIP进行下载，或者移步到[release](https://github.com/beiyuouo/hainanu-course-comments/releases)页面进行下载，本项目会定期添加release
 
