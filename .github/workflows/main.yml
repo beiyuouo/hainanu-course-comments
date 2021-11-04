@@ -43,10 +43,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git init
           git add -A
+          git checkout -b zips
           git commit -m "Zip files"
-          git branch -M zips
           git remote add origin https://github.com/beiyuouo/hainanu-course-comments.git
-          git push origin zips:zips --force
+          git branch
+          git branch -a
+          git push -f origin zips
 
       - name: Change dir
         run: |
