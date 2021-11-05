@@ -153,6 +153,8 @@ EI收录，12名分别加0.2,0.1
 
 求！！！！
 
+- [18级 | 海南大学 -> 中国科学院信息工程研究所](https://github.com/Eilopyq/2021-CS-Tuimian/blob/main/%E4%BF%9D%E7%A0%94%E5%9B%9E%E5%BF%86%E5%BD%95.md)
+
 
 ## 保研群
 
