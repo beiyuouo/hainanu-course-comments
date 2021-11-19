@@ -48,7 +48,7 @@ def list_files(course: str):
     filelist_texts_cdn = '### 一键下载（CDN加速）\n\n'
     zip_path = os.path.join('zips', '{}.zip'.format(course))
     print(course, get_file_size(zip_path))
-    filelist_texts_cdn += f"- [{os.path.basename(course)}.zip]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip({get_file_size(zip_path)}))\n\n"
+    filelist_texts_cdn += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
 
     filelist_texts_org = '### GitHub原始链接\n\n'
     readme_path = ''
