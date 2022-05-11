@@ -14,7 +14,7 @@ README_MD = ['README.md', 'readme.md', 'index.md']
 TXT_EXTS = ['md', 'txt']
 TXT_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/main/'
 BIN_URL_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/raw/main/'
-CDN_PREFIX = 'https://curly-shape-d178.qinse.workers.dev/'
+CDN_PREFIX = 'https://dl.capoo.xyz/'
 CDN_RAW_PREFIX = 'https://github.com/beiyuouo/hainanu-course-comments/blob/zips/'
 
 
