@@ -1,0 +1,6 @@
+﻿  源.cpp
+E:\study\大三\下\TCPIP\udpserver\源.cpp(24,43): error C2664: “void showerr(char *,bool)”: 无法将参数 1 从“const char [17]”转换为“char *”
+E:\study\大三\下\TCPIP\udpserver\源.cpp(24,11): message : 从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+E:\study\大三\下\TCPIP\udpserver\源.cpp(5,6): message : 参见“showerr”的声明
+E:\study\大三\下\TCPIP\udpserver\源.cpp(37,69): error C2440: “初始化”: 无法从“const char [48]”转换为“char *”
+E:\study\大三\下\TCPIP\udpserver\源.cpp(37,16): message : 从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)

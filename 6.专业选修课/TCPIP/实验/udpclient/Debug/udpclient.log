@@ -1,0 +1,8 @@
+﻿  udp.cpp
+E:\study\大三\下\TCPIP\udpclient\udp.cpp(23,11): warning C4473: “scanf_s”: 没有为格式字符串传递足够的参数
+E:\study\大三\下\TCPIP\udpclient\udp.cpp(23,11): message : 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
+E:\study\大三\下\TCPIP\udpclient\udp.cpp(23,11): message : 缺失的可变参数 2 为格式字符串“%s”所需
+E:\study\大三\下\TCPIP\udpclient\udp.cpp(23,11): message : 此参数用作缓冲区大小
+E:\study\大三\下\TCPIP\udpclient\udp.cpp(16,34): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\study\大三\下\TCPIP\udpclient\udp.cpp(38,16): warning C4101: “iSockErr2”: 未引用的局部变量
+  udpclient.vcxproj -> E:\study\大三\下\TCPIP\udpclient\Debug\udpclient.exe

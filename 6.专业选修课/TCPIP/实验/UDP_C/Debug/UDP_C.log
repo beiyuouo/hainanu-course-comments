@@ -1,0 +1,8 @@
+﻿  udp_c.cpp
+E:\study\大三\下\TCPIP\UDP_C\udp_c.cpp(1,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+E:\study\大三\下\TCPIP\UDP_C\udp_c.cpp(14,1): warning C4326: “main”的返回类型应为“int”而非“void”
+E:\study\大三\下\TCPIP\UDP_C\udp_c.cpp(33,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\study\大三\下\TCPIP\UDP_C\udp_c.cpp(68,64): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\study\大三\下\TCPIP\UDP_C\udp_c.cpp(72,34): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\study\大三\下\TCPIP\UDP_C\udp_c.cpp(76,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  UDP_C.vcxproj -> E:\study\大三\下\TCPIP\UDP_C\Debug\UDP_C.exe

@@ -1,0 +1,4 @@
+﻿  sniffer.cpp
+E:\study\大三\下\TCPIP\sniffer\sniffer.cpp(32,1): warning C4326: “main”的返回类型应为“int”而非“void”
+E:\study\大三\下\TCPIP\sniffer\sniffer.cpp(68,14): warning C4552: ”+“: 未使用表达式结果
+  sniffer.vcxproj -> E:\study\大三\下\TCPIP\sniffer\Debug\sniffer.exe

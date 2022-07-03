@@ -1,0 +1,3 @@
+﻿  client.cpp
+E:\study\大三\下\TCPIP\实验9客户端\client.cpp(26,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  实验9客户端.vcxproj -> E:\study\大三\下\TCPIP\实验9客户端\Debug\实验9客户端.exe

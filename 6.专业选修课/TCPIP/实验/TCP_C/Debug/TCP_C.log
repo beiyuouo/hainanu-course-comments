@@ -1,0 +1,5 @@
+﻿  TCP_C.cpp
+E:\study\大三\下\TCPIP\TCP_C\TCP_C.cpp(8,1): warning C4326: “main”的返回类型应为“int”而非“void”
+E:\study\大三\下\TCPIP\TCP_C\TCP_C.cpp(23,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\study\大三\下\TCPIP\TCP_C\TCP_C.cpp(35,48): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  TCP_C.vcxproj -> E:\study\大三\下\TCPIP\TCP_C\Debug\TCP_C.exe
