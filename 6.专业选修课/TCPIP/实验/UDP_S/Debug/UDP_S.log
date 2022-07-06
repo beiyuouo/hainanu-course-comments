@@ -1,9 +1,0 @@
-﻿  udp_s.cpp
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(1,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(3,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(15,1): warning C4326: “main”的返回类型应为“int”而非“void”
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(41,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(46,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(47,32): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\study\大三\下\TCPIP\UDP_S\udp_s.cpp(101,63): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  UDP_S.vcxproj -> E:\study\大三\下\TCPIP\UDP_S\Debug\UDP_S.exe

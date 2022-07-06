@@ -1,3 +1,0 @@
-﻿  server.cpp
-E:\study\大三\下\TCPIP\实验9f服务器端\server.cpp(65,29): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  实验9.vcxproj -> E:\study\大三\下\TCPIP\实验9f服务器端\Debug\实验9.exe

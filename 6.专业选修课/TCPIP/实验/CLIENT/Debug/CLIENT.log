@@ -1,5 +1,0 @@
-﻿  Client.cpp
-E:\study\大三\下\TCPIP\聊天室\源码\Client.cpp(29,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\study\大三\下\TCPIP\聊天室\源码\Client.cpp(41,34): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\study\大三\下\TCPIP\聊天室\源码\Client.cpp(86,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  CLIENT.vcxproj -> E:\study\大三\下\TCPIP\CLIENT\Debug\CLIENT.exe

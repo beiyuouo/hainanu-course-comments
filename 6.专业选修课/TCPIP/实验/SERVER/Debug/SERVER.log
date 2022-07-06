@@ -1,4 +1,0 @@
-﻿  Server.cpp
-E:\study\大三\下\TCPIP\聊天室\源码\Server.cpp(36,29): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\study\大三\下\TCPIP\聊天室\源码\Server.cpp(74,65): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  SERVER.vcxproj -> E:\study\大三\下\TCPIP\SERVER\Debug\SERVER.exe
