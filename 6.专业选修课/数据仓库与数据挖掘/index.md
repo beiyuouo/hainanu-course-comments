@@ -2,19 +2,18 @@
 
 教师：杨厚群
 
-贡献者：[尼古丁真](https://github.com/ibrothercow)、[北屿](https://github.com/beiyuouo)
+贡献者：[尼古丁真](https://github.com/ibrothercow)、[北屿](https://github.com/beiyuouo)、吉祥三诚
 
 ## 课程信息
 
-学分：4学分
-学时：64课时
+学分：4 学分
+学时：64 课时
 有无实验：有
 考核形式：开卷考试
 
-> 贡献者当时考试只有5道大题
+> 贡献者当时考试只有 5 道大题
 
 ## 适合人群
-
 
 ## 课程评价
 
@@ -30,6 +29,4 @@
 
 ## 非官方资料推荐
 
-
 ## 后续课程推荐
-
