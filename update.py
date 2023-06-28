@@ -52,28 +52,35 @@ def get_file_size(path: str):
 def list_files(course: str):
     filelist_texts = "## 文件列表\n\n"
     filelist_texts_cdn = "### 一键下载（CDN加速）\n\n"
+    filelist_texts_org = "### GitHub原始链接\n\n"
     zip_path = os.path.join("zips", "{}.zip".format(course))
     if os.path.exists(zip_path):
         print(course, get_file_size(zip_path))
+        filelist_texts_cdn += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}{course}.zip)\n\n"
+        filelist_texts_org += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_RAW_PREFIX}{course}.zip)\n\n"
     else:
         # has splited zip files
         zip_paths = list(
             filter(
-                lambda x: x.startswith(course) and ".zip" in x,
+                lambda x: f"{os.path.basename(course)}" in x and ".zip" in x,
                 map(
-                    lambda x: os.path.join("zips", course, x),
-                    os.listdir(os.path.join("zips", course)),
+                    lambda x: os.path.join(os.path.dirname(course), x),
+                    os.listdir(os.path.join("zips", os.path.dirname(course))),
                 ),
             )
         )
+        print(zip_paths, course)
         zip_paths.sort()
         for zip_path in zip_paths:
-            print(zip_path, get_file_size(zip_path))
+            print(zip_path, get_file_size(os.path.join("zips", zip_path)))
+            filelist_texts_cdn += f"- [{os.path.basename(zip_path)}({get_file_size(os.path.join('zips', zip_path))})]({CDN_PREFIX}/{CDN_RAW_PREFIX}{zip_path})\n"
+            filelist_texts_org += f"- [{os.path.basename(zip_path)}({get_file_size(os.path.join('zips', zip_path))})]({CDN_RAW_PREFIX}{zip_path})\n"
 
-    filelist_texts_cdn += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
+        filelist_texts_cdn += "\n"
+        filelist_texts_org += "\n"
 
-    filelist_texts_org = "### GitHub原始链接\n\n"
-    filelist_texts_org += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_RAW_PREFIX}{course}.zip)\n\n"
+    print(filelist_texts_cdn)
+    print(filelist_texts_org)
 
     readme_path = ""
     for root, dirs, files in os.walk(course):
