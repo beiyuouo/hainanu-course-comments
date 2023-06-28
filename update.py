@@ -53,7 +53,23 @@ def list_files(course: str):
     filelist_texts = "## 文件列表\n\n"
     filelist_texts_cdn = "### 一键下载（CDN加速）\n\n"
     zip_path = os.path.join("zips", "{}.zip".format(course))
-    print(course, get_file_size(zip_path))
+    if os.path.exists(zip_path):
+        print(course, get_file_size(zip_path))
+    else:
+        # has splited zip files
+        zip_paths = list(
+            filter(
+                lambda x: x.startswith(course) and ".zip" in x,
+                map(
+                    lambda x: os.path.join("zips", course, x),
+                    os.listdir(os.path.join("zips", course)),
+                ),
+            )
+        )
+        zip_paths.sort()
+        for zip_path in zip_paths:
+            print(zip_path, get_file_size(zip_path))
+
     filelist_texts_cdn += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
 
     filelist_texts_org = "### GitHub原始链接\n\n"
@@ -137,7 +153,7 @@ if __name__ == "__main__":
                     )
                 )
                 os.remove(os.path.join("zips", topic, "{}.zip".format(course)))
-                os.remove(os.path.join("zips", topic, "{}.zip.aa".format(course)))
+                # os.remove(os.path.join("zips", topic, "{}.zip.aa".format(course)))
 
             filelist_texts, readme_path = list_files(course_path)
 
