@@ -5,7 +5,17 @@ import os
 from urllib.parse import quote
 import zipfile
 
-EXCLUDE_DIRS = [".git", "docs", ".vscode", "overrides", ".github", "script", "images", "zips", "site"]
+EXCLUDE_DIRS = [
+    ".git",
+    "docs",
+    ".vscode",
+    "overrides",
+    ".github",
+    "script",
+    "images",
+    "zips",
+    "site",
+]
 README_MD = ["README.md", "readme.md", "index.md"]
 
 TXT_EXTS = ["md", "txt"]
@@ -44,14 +54,10 @@ def list_files(course: str):
     filelist_texts_cdn = "### 一键下载（CDN加速）\n\n"
     zip_path = os.path.join("zips", "{}.zip".format(course))
     print(course, get_file_size(zip_path))
-    filelist_texts_cdn += (
-        f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
-    )
+    filelist_texts_cdn += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}/{course}.zip)\n\n"
 
     filelist_texts_org = "### GitHub原始链接\n\n"
-    filelist_texts_org += (
-        f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_RAW_PREFIX}{course}.zip)\n\n"
-    )
+    filelist_texts_org += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_RAW_PREFIX}{course}.zip)\n\n"
 
     readme_path = ""
     for root, dirs, files in os.walk(course):
@@ -97,7 +103,9 @@ if __name__ == "__main__":
     global PROJECT_PATH
     PROJECT_PATH = os.path.abspath(__file__)
 
-    topics = list(filter(lambda x: os.path.isdir(x) and (x not in EXCLUDE_DIRS), os.listdir(".")))  # list topics
+    topics = list(
+        filter(lambda x: os.path.isdir(x) and (x not in EXCLUDE_DIRS), os.listdir("."))
+    )  # list topics
 
     for topic in topics:
         topic_path = os.path.join(".", topic)
@@ -106,7 +114,9 @@ if __name__ == "__main__":
 
         courses = list(
             filter(
-                lambda x: os.path.isdir(os.path.join(topic_path, x)) and (x not in EXCLUDE_DIRS), os.listdir(topic_path)
+                lambda x: os.path.isdir(os.path.join(topic_path, x))
+                and (x not in EXCLUDE_DIRS),
+                os.listdir(topic_path),
             )
         )  # list courses
 
@@ -114,6 +124,21 @@ if __name__ == "__main__":
             course_path = os.path.join(".", topic, course)
 
             make_zip(course_path, os.path.join("zips", topic, "{}.zip".format(course)))
+
+            # split zip files limit 100MB
+            if (
+                os.path.getsize(os.path.join("zips", topic, "{}.zip".format(course)))
+                > 100 * 1024 * 1024
+            ):
+                os.system(
+                    "split -b 100M {} {}".format(
+                        os.path.join("zips", topic, "{}.zip".format(course)),
+                        os.path.join("zips", topic, "{}.zip.".format(course)),
+                    )
+                )
+                os.remove(os.path.join("zips", topic, "{}.zip".format(course)))
+                os.remove(os.path.join("zips", topic, "{}.zip.aa".format(course)))
+
             filelist_texts, readme_path = list_files(course_path)
 
             generate_md(course, filelist_texts, readme_path, topic)
