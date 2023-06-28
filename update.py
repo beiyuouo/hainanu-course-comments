@@ -69,7 +69,7 @@ def list_files(course: str):
                 ),
             )
         )
-        print(zip_paths, course)
+        # print(zip_paths, course)
         zip_paths.sort()
         for zip_path in zip_paths:
             print(zip_path, get_file_size(os.path.join("zips", zip_path)))
@@ -79,8 +79,8 @@ def list_files(course: str):
         filelist_texts_cdn += "\n"
         filelist_texts_org += "\n"
 
-    print(filelist_texts_cdn)
-    print(filelist_texts_org)
+    # print(filelist_texts_cdn)
+    # print(filelist_texts_org)
 
     readme_path = ""
     for root, dirs, files in os.walk(course):
