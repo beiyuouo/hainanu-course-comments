@@ -23,6 +23,7 @@ TXT_URL_PREFIX = "https://github.com/beiyuouo/hainanu-course-comments/blob/main/
 BIN_URL_PREFIX = "https://github.com/beiyuouo/hainanu-course-comments/raw/main/"
 CDN_PREFIX = "https://dl.capoo.xyz/"
 CDN_RAW_PREFIX = "https://github.com/beiyuouo/hainanu-course-comments/blob/zips/"
+ALIST_PREFIX = "https://i.ros.services/"
 
 
 def make_zip(dir_path, zip_path):
@@ -51,12 +52,15 @@ def get_file_size(path: str):
 
 def list_files(course: str):
     filelist_texts = "## 文件列表\n\n"
-    filelist_texts_cdn = "### 一键下载（CDN加速）\n\n"
-    filelist_texts_org = "### GitHub原始链接\n\n"
+    filelist_texts_alist = "### Alist 预览和下载链接\n\n"
+    filelist_texts_alist += (
+        f"- [{os.path.basename(course)}]({ALIST_PREFIX}{course})\n\n"
+    )
+
+    filelist_texts_org = "### GitHub 原始链接\n\n"
     zip_path = os.path.join("zips", "{}.zip".format(course))
     if os.path.exists(zip_path):
         print(course, get_file_size(zip_path))
-        filelist_texts_cdn += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_PREFIX}/{CDN_RAW_PREFIX}{course}.zip)\n\n"
         filelist_texts_org += f"- [{os.path.basename(course)}.zip({get_file_size(zip_path)})]({CDN_RAW_PREFIX}{course}.zip)\n\n"
     else:
         # has splited zip files
@@ -73,10 +77,8 @@ def list_files(course: str):
         zip_paths.sort()
         for zip_path in zip_paths:
             print(zip_path, get_file_size(os.path.join("zips", zip_path)))
-            filelist_texts_cdn += f"- [{os.path.basename(zip_path)}({get_file_size(os.path.join('zips', zip_path))})]({CDN_PREFIX}/{CDN_RAW_PREFIX}{zip_path})\n"
             filelist_texts_org += f"- [{os.path.basename(zip_path)}({get_file_size(os.path.join('zips', zip_path))})]({CDN_RAW_PREFIX}{zip_path})\n"
 
-        filelist_texts_cdn += "\n"
         filelist_texts_org += "\n"
 
     # print(filelist_texts_cdn)
@@ -101,7 +103,7 @@ def list_files(course: str):
                     )
             elif root == course and readme_path == "":
                 readme_path = "{}/{}".format(root, f)
-    return filelist_texts + filelist_texts_cdn + filelist_texts_org, readme_path
+    return filelist_texts + filelist_texts_alist + filelist_texts_org, readme_path
 
 
 def generate_md(course: str, filelist_texts: str, readme_path: str, topic: str):
